@@ -1,16 +1,17 @@
 body{
-    background-image: url("./img/1-5-1663413227047569804259.webp");
-    height: 100%;
+    background-image: url("./img/photo-1-1559368423910633115149.webp");
+    /* height: 100%; */
     z-index: 0;
     width: 100%;
     position: relative;
     overflow-x: hidden;
+    background-size: cover;
 }
 
 .bgr{
     width: 50%;
     margin: auto;
-    height: 105vh;
+    height: 117vh;
     /* margin-top: 20px; */
     background-color: white;
     z-index: 2;
@@ -40,7 +41,7 @@ body{
 }
 #btstart{
     height: 40px;
-    background-color: brown;
+    background-color: rgb(99, 55, 11);
     border-radius: 5px;
     border: none;
     font-size: 16px;
@@ -49,76 +50,87 @@ body{
 #btstart:hover{
     border: 1px solid rgb(204, 79, 79);
     font-size: 20px;
-    color: brown;
+    color: rgb(172, 139, 85);
     background-color: white;
 }
 #welcome{
     margin: auto;
     color: white;
     width: 80%;
-    height: 260px;
+    height: 360px;
+    /* padding-bottom: 20px; */
+    padding-top: 40px;
 }
-#welcome h2{
+#TitleWelcome{
     text-align: center;
-    padding-top: 100px;
     font-size: 25px;
-    display: none;
-}
-.table{
-    width: 50%;
-    height: 220px;
-    margin: auto;
-    margin-top: 80px;
-    z-index: 1;
-    /* display: block; */
-}
-th, td{
-    border: 1px solid black;
-    z-index: 1;
-}
-td > .box{
     width: 100%;
-    height: 100%;
-    z-index: 2;
+    
+}
+.container-table{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 2; */
+}
+#game{
+    height: 350px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1vmin;
+    margin: auto;
+}
+.box{
+    width: 30px;
+    /* height: 30px; */
     font-size: 20px;
-    color: brown;
+    color: rgb(245, 219, 178);
+    background-color: rgb(172, 139, 85);
 }
-td > .box:hover{
+.box:hover{
     background-color: antiquewhite;
-    border: 2px solid brown;
-    z-index: 2;
+    border: 2px solid rgb(129, 104, 21);
 }
+
 #btrestart{
     width: 20%;
     height: 40px;
     color: white;
-    background-color: brown;
+    background-color: rgb(99, 55, 11);
     border-radius: 5px;
     font-size: 16px;
     /* margin-top: 50px; */
     margin-left: 40%;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    /* top: 100px; */
 }
 #btrestart:hover{
-    color: brown;
+    color: rgb(172, 139, 85);
     background-color: white;
     font-size: 20px;
 }
 #result{
     text-align: center;
-    font-size: 20px;
-    color: rgb(235, 114, 114);
+    font-size: 30px;
+    color: rgb(225, 117, 44);
     margin-bottom: 15px;
-    /* margin-top: 10px; */
+    margin-top: 10px;
+    font-weight: bold;
+    /* background-color: black; */
 }
 
 #turn{
     color: white;
     font-size: 25px;
     height: 30px;
-    background-color: rgb(172, 139, 85);
+    background-color: rgb(99, 55, 11);
     width: 30%;
     margin: auto;
     margin-top: 40px;
     text-align: center;
 }
+

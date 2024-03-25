@@ -66,38 +66,39 @@ buttonstart.addEventListener("click", () => {
     }
     else if(option === "3x3"){
         titleWelcome.style.display = "none";
+        
         check.innerHTML = "";
-        showtable(3);
+        showtable(9);
     }
     else if(option === "4x4"){
         titleWelcome.style.display = "none";
         check.innerHTML = "";
-        showtable(4);
+        showtable(16);
     }
     else{
         titleWelcome.style.display = "none";
         check.innerHTML = "";
-        showtable(5);
+        showtable(25);
     }
 })
 
 let boxes;
-const table = document.getElementById("table");
+// const table = document.getElementById("table");
 let turn = document.getElementById("turn");
-function showtable(row){
-    while (table.rows.length > 0) {
-        table.deleteRow(0);
-    }
-    for (let i = 0; i < row; i++) {
-        const row1 = table.insertRow(i);
-        for (let j = 0; j < row; j++) {
-            const cell = row1.insertCell(j);
-            const buttontable = document.createElement("button");
-            buttontable.setAttribute("class", "box");
-            buttontable.textContent = "";
-            cell.appendChild(buttontable);
-            // console.log(cell);
-        }
+function showtable(buttoncount){
+    const buttonContainer = document.getElementById('game');
+    buttonContainer.innerHTML = ''; // Clear previous buttons
+    
+    for (let i = 0; i < buttoncount; i++) {
+        const button = document.createElement('button');
+        button.className = 'box';
+        button.innerText = "";
+        const row = Math.sqrt(buttoncount);
+        button.style.flex = `1 0 calc(100%/${row} - 10px)`;
+        const heightbutton = `calc(100%/${row} - 10px)`;
+        console.log("height" + heightbutton)
+        button.style.height = heightbutton;
+        buttonContainer.appendChild(button);
     }
     boxes = document.querySelectorAll(".box");
     turn.innerHTML = "It's O's turn";
@@ -107,26 +108,25 @@ function showtable(row){
             console.log("hello");
             if(turn0){
                 box.innerHTML = "O";
+                box.style.backgroundColor = 'rgba(40, 22, 2, 0.6)';
                 turn0 = false;
                 turn.innerHTML = "It's X's turn";
             }
             else{
                 box.innerHTML = "X";
+                box.style.backgroundColor = 'rgba(40, 22, 2, 0.6)';
                 turn0 = true;
                 turn.innerHTML = "It's O's turn";
             }
             box.disabled = true;
-            if(row === 3){
+            if(buttoncount === 9){
                 checkWinner3();
-                // turn.innerHTML = "Finished";
             }
-            else if(row === 4){
+            else if(buttoncount === 16){
                 checkWinner4();
-                // turn.innerHTML = "Finished";
             }
             else{
                 checkWinner5();
-                // turn.innerHTML = "Finished";
             }
         })
     })
